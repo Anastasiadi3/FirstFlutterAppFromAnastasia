@@ -33,17 +33,16 @@ class _HomeScreenState extends State<HomeScreen> {
     super.dispose();
   }
 
-  // Συνάρτηση που κάνει την αντίστροφη μέτρηση έναν-έναν αριθμό με καθυστέρηση 1 δευτερολέπτου
+ 
   void _startCountdown(int startNumber) async {
     for (int i = startNumber; i >= 0; i--) {
-      // Αν ο χρήστης έκλεισε την οθόνη την ώρα που μετράει, σταματάμε για να μη σκάσει λάθος
+     
       if (!mounted) return;
 
       setState(() {
         _counter = i;
       });
 
-      // Περιμένει 1 δευτερόλεπτο πριν εμφανίσει τον επόμενο αριθμό
       await Future.delayed(const Duration(seconds: 1));
     }
   }
@@ -82,7 +81,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 }
                 _numberController.clear();
               },
-              child: const Text('Ξεκίνα μέτρηση'),
+              child: const Text('Ξεκίνα τη μέτρηση'),
             ),
           ],
         ),
